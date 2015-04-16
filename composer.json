@@ -1,0 +1,12 @@
+{
+    "name": "mindofmicah/laravel-datatables",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Eschbacher",
+            "email": "michaeleschbacher@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
