@@ -1,0 +1,8 @@
+{
+    "baseUrl" : "http://localhost:8887",
+    "pdo" : {
+        "connection" : "sqlite:storage/storage.sqlite",
+        "username":"",
+        "password":""
+    }
+}
