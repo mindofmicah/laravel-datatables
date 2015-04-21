@@ -8,5 +8,26 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "autoload" : {
+        "psr-4" : {
+            "" : "MindOfMicah\\LaravelDatatables",
+            "MindOfMicah\\LaravelDatatables\\" : "MindOfMicah\\LaravelDatatables"
+        }
+    },
+    "autoload-dev" : {
+        "classmap" : [
+            "tests/TestCase.php",
+            "tests/EloquentFunctionalityTrait.php",
+            "tests/helpers/models"
+        ],
+        "files" : [
+            "tests/helpers/functions.php"
+        ]
+    },
+    "require": {},
+    "require-dev": {
+        "laracasts/integrated": "dev-master",
+        "illuminate/database" : "~5.0",
+        "phpspec/phpspec": "~2.2@dev"
+    }
 }
