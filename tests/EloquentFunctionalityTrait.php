@@ -5,6 +5,8 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 trait EloquentFunctionalityTrait 
 {
+    protected $tables_used = [];
+
     /**
      * Begin a new database transaction.
      *
@@ -12,7 +14,8 @@ trait EloquentFunctionalityTrait
      */
     public function beginTransaction()
     {
-        $this->capsule->table('m')->truncate();
+        $this->capsule = buildCapsuleFromConfigFile(__DIR__ . '/../integrated.json');
+        $this->clearTables();
     }
 
     /**
@@ -22,6 +25,17 @@ trait EloquentFunctionalityTrait
      */
     public function rollbackTransaction()
     {
-        $this->capsule->table('m')->truncate();
+        $this->clearTables();
+    }
+
+    protected function clearTables()
+    {
+        if (!is_array($this->tables_used)) {
+            $this->tables_used = [$this->tables_used];
+        }
+
+        foreach ($this->tables_used as $table) {
+            $this->capsule->table($table)->truncate();
+        }
     }
 }
