@@ -1,8 +1,11 @@
 <?php
-class ExampleTest extends TestCase 
+use Laracasts\Integrated\Extensions\Goutte as IntegrationTest;
+
+class ExampleTest extends IntegrationTest 
 {
     use EloquentFunctionalityTrait;
 
+    protected $tables_used = ['m'];
 	/**
 	 * A basic functional test example.
 	 *
