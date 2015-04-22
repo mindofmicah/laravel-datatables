@@ -26,7 +26,8 @@
     "require": {},
     "require-dev": {
         "laracasts/integrated": "dev-master",
+        "illuminate/http" : "~5.0",
         "illuminate/database" : "~5.0",
-        "phpspec/phpspec": "~2.2@dev"
+        "phpspec/phpspec": "~2.0"
     }
 }
