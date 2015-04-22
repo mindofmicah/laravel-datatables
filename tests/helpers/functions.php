@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Database\Capsule\Manager as Capsule;
+use Illuminate\Http\Request;
 
 function buildCapsuleFromConfigFile($config_file)
 {
@@ -26,4 +27,9 @@ function buildCapsuleFromConfigFile($config_file)
     $capsule->bootEloquent();
 
     return $capsule;
+}
+
+function buildRequestObject()
+{
+    return Request::capture();
 }
