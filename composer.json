@@ -17,7 +17,8 @@
     "autoload-dev" : {
         "classmap" : [
             "tests/EloquentFunctionalityTrait.php",
-            "tests/helpers/models"
+            "tests/helpers/models",
+            "tests/TestCase.php"
         ],
         "files" : [
             "tests/helpers/functions.php"
