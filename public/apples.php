@@ -5,6 +5,6 @@ buildCapsuleFromConfigFile(__DIR__ . '/../integrated.json');
 $request = buildRequestObject();
 
 
-echo '<pre>';
-var_dump($request);
-Model::create(['hi'=>'b']);
+
+echo Model::all()->toJSON();
+//echo json_encode(['micah'=>'awesome']);
