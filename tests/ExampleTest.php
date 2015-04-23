@@ -1,9 +1,11 @@
 <?php
-use Laracasts\Integrated\Extensions\Goutte as IntegrationTest;
+use Laracasts\TestDummy\Factory as TestDummy;
+use Laracasts\Integrated\Extensions\ApiRequests;
 
-class ExampleTest extends IntegrationTest 
+class ExampleTest extends TestCase
 {
     use EloquentFunctionalityTrait;
+    use ApiRequests;
 
     protected $tables_used = ['m'];
 	/**
@@ -13,6 +15,9 @@ class ExampleTest extends IntegrationTest
 	 */
 	public function testBasicExample()
 	{
-        $this->visit('/apples.php')->andSeeInDatabase('m', ['hi'=>'b']);
+        TestDummy::create('Model', ['hi'=>'micah']);                
+
+        $response = $this->visit('/apples.php?model=Model')
+            ->seeJSONContains(['hi'=>'micah']);
 	}
 }
