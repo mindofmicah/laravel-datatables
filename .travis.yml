@@ -5,4 +5,4 @@ before_script:
     - ./bin/serve > /dev/null 2>&1 &
 
 script:
-    - phpunit
+    - phpunit --coverage-text
