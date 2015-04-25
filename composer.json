@@ -11,8 +11,8 @@
     "minimum-stability": "dev",
     "autoload" : {
         "psr-4" : {
-            "" : "MindOfMicah\\LaravelDatatables",
-            "MindOfMicah\\LaravelDatatables\\" : "MindOfMicah\\LaravelDatatables"
+            "" : "src/MindOfMicah/LaravelDatatables",
+            "MindOfMicah\\LaravelDatatables\\" : "src/MindOfMicah/LaravelDatatables"
         }
     },
     "autoload-dev" : {
@@ -30,6 +30,7 @@
         "laracasts/integrated": "dev-master",
         "illuminate/http" : "~5.0",
         "illuminate/database" : "~5.0",
-        "phpspec/phpspec": "~2.0"
+        "phpspec/phpspec": "~2.0",
+        "illuminate/contracts": "~5.1@dev"
     }
 }
