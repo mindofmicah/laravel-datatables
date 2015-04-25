@@ -9,4 +9,5 @@ before_script:
     - ./bin/serve > /dev/null 2>&1 &
 
 script:
+    - vendor/bin/phpspec run -v
     - phpunit 
