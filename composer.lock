@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fbe1ce78058991aacfe3cad390cb09b1",
+    "hash": "80986c4c5673e100acc78c975a212503",
     "packages": [
         {
             "name": "danielstjules/stringy",
@@ -1015,7 +1015,7 @@
             ],
             "authors": [
                 {
-                    "name": "François Zaninotto"
+                    "name": "Francois Zaninotto"
                 }
             ],
             "description": "Faker is a PHP library that generates fake data for you.",
@@ -1249,12 +1249,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laracasts/Integrated.git",
-                "reference": "cd48e751bbe2d8f2f5ed487b8225d3543409804f"
+                "reference": "a68a64b70abe5bab8dc7e41872739e51965548d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laracasts/Integrated/zipball/cd48e751bbe2d8f2f5ed487b8225d3543409804f",
-                "reference": "cd48e751bbe2d8f2f5ed487b8225d3543409804f",
+                "url": "https://api.github.com/repos/laracasts/Integrated/zipball/a68a64b70abe5bab8dc7e41872739e51965548d2",
+                "reference": "a68a64b70abe5bab8dc7e41872739e51965548d2",
                 "shasum": ""
             },
             "require": {
@@ -1288,7 +1288,7 @@
                 "laravel",
                 "testing"
             ],
-            "time": "2015-04-24 04:36:03"
+            "time": "2015-04-25 16:11:32"
         },
         {
             "name": "laracasts/testdummy",
