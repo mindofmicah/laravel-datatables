@@ -42,6 +42,6 @@ trait EloquentFunctionalityTrait
             return [$this->tables_used];
         }
 
-        return [];
+        return $this->tables_used;
     }
 }
