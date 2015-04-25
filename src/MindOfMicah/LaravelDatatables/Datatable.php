@@ -7,6 +7,11 @@ class Datatable
 {
     protected $model;
     protected $columns;
+
+	public function __construct($a) {
+		$this->a = $a;
+	}
+	
     public function asJsonResponse()
     {
         $data = [];
