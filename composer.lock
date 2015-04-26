@@ -1090,12 +1090,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/RingPHP.git",
-                "reference": "92acaac74da1c874f948c8743e4cadfad03d5aea"
+                "reference": "06bab717fb6df6aca74faa9512ea46b55cc80c1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/RingPHP/zipball/92acaac74da1c874f948c8743e4cadfad03d5aea",
-                "reference": "92acaac74da1c874f948c8743e4cadfad03d5aea",
+                "url": "https://api.github.com/repos/guzzle/RingPHP/zipball/06bab717fb6df6aca74faa9512ea46b55cc80c1a",
+                "reference": "06bab717fb6df6aca74faa9512ea46b55cc80c1a",
                 "shasum": ""
             },
             "require": {
@@ -1133,7 +1133,7 @@
                 }
             ],
             "description": "Provides a simple API and specification that abstracts away the details of HTTP into a single PHP function.",
-            "time": "2015-04-23 20:42:08"
+            "time": "2015-04-25 20:08:10"
         },
         {
             "name": "guzzlehttp/streams",
@@ -1249,12 +1249,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laracasts/Integrated.git",
-                "reference": "a68a64b70abe5bab8dc7e41872739e51965548d2"
+                "reference": "e99799e738892d32c8190ae4bf38ffe196de9fbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laracasts/Integrated/zipball/a68a64b70abe5bab8dc7e41872739e51965548d2",
-                "reference": "a68a64b70abe5bab8dc7e41872739e51965548d2",
+                "url": "https://api.github.com/repos/laracasts/Integrated/zipball/e99799e738892d32c8190ae4bf38ffe196de9fbe",
+                "reference": "e99799e738892d32c8190ae4bf38ffe196de9fbe",
                 "shasum": ""
             },
             "require": {
@@ -1288,7 +1288,7 @@
                 "laravel",
                 "testing"
             ],
-            "time": "2015-04-25 16:11:32"
+            "time": "2015-04-26 00:00:37"
         },
         {
             "name": "laracasts/testdummy",
@@ -1510,12 +1510,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "08c0d7d648efdaa1491ce8f9ad5df4ec79b3d099"
+                "reference": "f4877a09b4210f4cb087823fd2410aee39bdaf02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/08c0d7d648efdaa1491ce8f9ad5df4ec79b3d099",
-                "reference": "08c0d7d648efdaa1491ce8f9ad5df4ec79b3d099",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/f4877a09b4210f4cb087823fd2410aee39bdaf02",
+                "reference": "f4877a09b4210f4cb087823fd2410aee39bdaf02",
                 "shasum": ""
             },
             "require": {
@@ -1562,7 +1562,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2015-04-23 08:18:32"
+            "time": "2015-04-25 21:18:56"
         },
         {
             "name": "react/promise",
