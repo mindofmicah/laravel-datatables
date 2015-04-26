@@ -1,6 +1,6 @@
 <?php
 use Laracasts\TestDummy\Factory as TestDummy;
-use Laracasts\Integrated\Extensions\ApiRequests;
+use Laracasts\Integrated\Extensions\Traits\ApiRequests;
 
 class ExampleTest extends TestCase
 {
