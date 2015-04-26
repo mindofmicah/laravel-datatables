@@ -7,7 +7,11 @@ use Prophecy\Argument;
 
 class DatatableSpec extends ObjectBehavior
 {
-    
+    public function let(\Illuminate\Http\Request $request)
+    {
+        $this->beConstructedWith($request);
+    }
+
     public function it_returns_a_jsonresponse()
     {
         $this->asJsonResponse()->shouldHaveType('Illuminate\Http\JsonResponse');
