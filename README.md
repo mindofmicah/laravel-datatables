@@ -2,8 +2,9 @@
 [![Latest Stable Version](https://poser.pugx.org/mindofmicah/laravel-datatables/v/stable.svg)](https://packagist.org/packages/mindofmicah/laravel-datatables)
 [![Latest Unstable Version](https://poser.pugx.org/mindofmicah/laravel-datatables/v/unstable.svg)](https://packagist.org/packages/mindofmicah/laravel-datatables)
 [![License](https://poser.pugx.org/mindofmicah/laravel-datatables/license.svg)](https://packagist.org/packages/mindofmicah/laravel-datatables)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/2be0811e-861b-453d-9c27-8ba17a77e893/big.png)](https://insight.sensiolabs.com/projects/2be0811e-861b-453d-9c27-8ba17a77e893)
 
-# laravel-datatables
+# laravel datatables
 
 
 ## Usage
