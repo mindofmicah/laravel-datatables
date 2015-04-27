@@ -14,14 +14,13 @@
 composer require mindofmicah/laravel-datatables
 ```
 
-### Step 2: Add the Service Provider ... coming soon
+### Step 2: Add the Service Provider
 ```php
-public function register()
-{
-
-}
+'MindOfMicah\LaravelDatatables\DatatableProvider'
 ```
-### Step 3: Add the Facade(optional) ... coming soon
-
+### Step 3: Add the Facade(optional)
+```php
+'Datatable' => 'MindOfMicah\LaravelDatatables\DatatableFacade'
+```
 ## Running the tests
 Make sure that the storage directory has 777 permissions when running tests
