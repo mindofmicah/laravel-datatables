@@ -44,7 +44,6 @@ class Datatable
     public function pluckColumns($argument1)
     {
         $this->columns[] = $argument1;
-        // TODO: write logic here
         return $this;
     }
 }
