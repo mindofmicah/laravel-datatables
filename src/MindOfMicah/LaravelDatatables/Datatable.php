@@ -26,7 +26,7 @@ class Datatable
             $total = count($models);
             $amount_displayed = count($models);
         }
-       // return new JsonResponse([], 200);
+
         $data = ([
             'aaData'=>$data,
             'iTotalRecords'=>$total,
