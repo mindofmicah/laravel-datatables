@@ -1,5 +1,6 @@
 {
     "name": "mindofmicah/laravel-datatables",
+    "description":"Middleman allowing Laravel and Datatables to communicate",
     "license": "MIT",
     "authors": [
         {
