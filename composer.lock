@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "80986c4c5673e100acc78c975a212503",
+    "hash": "bfd1c38b271b703bb6ac2b405a136c7d",
     "packages": [
         {
             "name": "danielstjules/stringy",
@@ -178,12 +178,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "2b217b9f2327cba469148aeaf6451a72af8f0c99"
+                "reference": "cce6e24352076a88c32b834888dcd78d3b5554ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/2b217b9f2327cba469148aeaf6451a72af8f0c99",
-                "reference": "2b217b9f2327cba469148aeaf6451a72af8f0c99",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/cce6e24352076a88c32b834888dcd78d3b5554ad",
+                "reference": "cce6e24352076a88c32b834888dcd78d3b5554ad",
                 "shasum": ""
             },
             "require": {
@@ -212,7 +212,7 @@
             ],
             "description": "The Illuminate Contracts package.",
             "homepage": "http://laravel.com",
-            "time": "2015-04-11 19:01:42"
+            "time": "2015-04-27 19:33:45"
         },
         {
             "name": "illuminate/database",
@@ -220,12 +220,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "edadb326e2544f2de82908be961dd85ae965a629"
+                "reference": "1cca379995ae11c022c261eff51af33255abad78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/edadb326e2544f2de82908be961dd85ae965a629",
-                "reference": "edadb326e2544f2de82908be961dd85ae965a629",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/1cca379995ae11c022c261eff51af33255abad78",
+                "reference": "1cca379995ae11c022c261eff51af33255abad78",
                 "shasum": ""
             },
             "require": {
@@ -270,7 +270,7 @@
                 "orm",
                 "sql"
             ],
-            "time": "2015-04-23 15:44:52"
+            "time": "2015-04-26 17:50:09"
         },
         {
             "name": "illuminate/http",
@@ -817,12 +817,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Translation.git",
-                "reference": "a0d2da83c9facd8c368059d547cc48b5d422cc9e"
+                "reference": "6a32264d216a4cafd9fdc25b2e70b9cf6f66f73f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Translation/zipball/a0d2da83c9facd8c368059d547cc48b5d422cc9e",
-                "reference": "a0d2da83c9facd8c368059d547cc48b5d422cc9e",
+                "url": "https://api.github.com/repos/symfony/Translation/zipball/6a32264d216a4cafd9fdc25b2e70b9cf6f66f73f",
+                "reference": "6a32264d216a4cafd9fdc25b2e70b9cf6f66f73f",
                 "shasum": ""
             },
             "require": {
@@ -867,7 +867,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "http://symfony.com",
-            "time": "2015-04-22 21:34:04"
+            "time": "2015-04-27 12:43:05"
         }
     ],
     "packages-dev": [
@@ -980,12 +980,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "901bde792eddf6907f33634ff8aafb2dfddd4784"
+                "reference": "e1e2782f8e59c76d2a0d83f0944d4480db880883"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/901bde792eddf6907f33634ff8aafb2dfddd4784",
-                "reference": "901bde792eddf6907f33634ff8aafb2dfddd4784",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/e1e2782f8e59c76d2a0d83f0944d4480db880883",
+                "reference": "e1e2782f8e59c76d2a0d83f0944d4480db880883",
                 "shasum": ""
             },
             "require": {
@@ -1015,7 +1015,7 @@
             ],
             "authors": [
                 {
-                    "name": "Francois Zaninotto"
+                    "name": "François Zaninotto"
                 }
             ],
             "description": "Faker is a PHP library that generates fake data for you.",
@@ -1024,7 +1024,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2015-04-14 13:37:56"
+            "time": "2015-04-27 20:24:42"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1249,12 +1249,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laracasts/Integrated.git",
-                "reference": "e99799e738892d32c8190ae4bf38ffe196de9fbe"
+                "reference": "91e7aeaebc9135de69ce095145903f5cf871e300"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laracasts/Integrated/zipball/e99799e738892d32c8190ae4bf38ffe196de9fbe",
-                "reference": "e99799e738892d32c8190ae4bf38ffe196de9fbe",
+                "url": "https://api.github.com/repos/laracasts/Integrated/zipball/91e7aeaebc9135de69ce095145903f5cf871e300",
+                "reference": "91e7aeaebc9135de69ce095145903f5cf871e300",
                 "shasum": ""
             },
             "require": {
@@ -1288,20 +1288,20 @@
                 "laravel",
                 "testing"
             ],
-            "time": "2015-04-26 00:00:37"
+            "time": "2015-04-27 15:40:24"
         },
         {
             "name": "laracasts/testdummy",
-            "version": "2.3.1",
+            "version": "2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laracasts/TestDummy.git",
-                "reference": "4f1b1830b3b5d6cc03e52a56d8e8d858e4a5da4b"
+                "reference": "ba986a66b6f4a1e149355357353af3072d5521ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laracasts/TestDummy/zipball/4f1b1830b3b5d6cc03e52a56d8e8d858e4a5da4b",
-                "reference": "4f1b1830b3b5d6cc03e52a56d8e8d858e4a5da4b",
+                "url": "https://api.github.com/repos/laracasts/TestDummy/zipball/ba986a66b6f4a1e149355357353af3072d5521ee",
+                "reference": "ba986a66b6f4a1e149355357353af3072d5521ee",
                 "shasum": ""
             },
             "require": {
@@ -1340,7 +1340,7 @@
                 "stubs",
                 "testing"
             ],
-            "time": "2015-03-29 15:07:54"
+            "time": "2015-04-27 15:56:12"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -1510,12 +1510,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "f4877a09b4210f4cb087823fd2410aee39bdaf02"
+                "reference": "686513b022b0fe3b5da716e40d7ade759307f31f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/f4877a09b4210f4cb087823fd2410aee39bdaf02",
-                "reference": "f4877a09b4210f4cb087823fd2410aee39bdaf02",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/686513b022b0fe3b5da716e40d7ade759307f31f",
+                "reference": "686513b022b0fe3b5da716e40d7ade759307f31f",
                 "shasum": ""
             },
             "require": {
@@ -1562,7 +1562,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2015-04-25 21:18:56"
+            "time": "2015-04-27 17:45:22"
         },
         {
             "name": "react/promise",
