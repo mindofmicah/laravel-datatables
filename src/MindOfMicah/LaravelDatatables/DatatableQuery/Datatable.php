@@ -31,7 +31,7 @@ class Datatable
     }
     private function formatColumns()
     {
-        return array_reduce($this->columns, function ($c, $column) {$c[] = $column->toArray();return $c;}, []);
+        return array_reduce($this->columns, function ($c, Column $column) {$c[] = $column->toArray();return $c;}, []);
     }
 
     public function formatSearch()
