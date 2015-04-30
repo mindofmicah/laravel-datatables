@@ -6,6 +6,9 @@ return [
     'columns' => function (&$datatable) {
         $datatable->forEloquentModel('\\Model')
             ->pluckColumns('hi'); 
+    },
+    'limit'=> function (&$datatable) {
+        $datatable->forEloquentModel('\\Model');
     }
 
 ];
