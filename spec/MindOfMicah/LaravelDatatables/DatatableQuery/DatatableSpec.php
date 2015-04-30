@@ -26,4 +26,9 @@ class DatatableSpec extends ObjectBehavior
         $this->columns[0]->name->shouldBe('mycolumn');
         $this->columns[1]->name->shouldBe('secondcolumn');
     }
+    public function it_allows_a_limit_to_be_set()
+    {
+        $this->limitedTo(5)->shouldBe($this);
+    }
+
 }

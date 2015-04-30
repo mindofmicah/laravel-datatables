@@ -6,6 +6,7 @@ class Datatable
 {
     public $columns = [];
 
+    public $limit = 10;
     public function addDummyColumns($how_many)
     {
         foreach(range(1, intval($how_many)) as $index) {
@@ -60,7 +61,7 @@ array (
   'columns' => $this->formatColumns(), 
   'order' => $this->formatSorting(), 
   'start' => '0',
-  'length' => '10',
+  'length' => $this->limit,
   'search' =>$this->formatSearch(), 
   '_' => '1430226949951',
 );
@@ -68,4 +69,10 @@ array (
 }
 
 
+
+    public function limitedTo($argument1)
+    {
+        $this->limit = $argument1;
+        return $this;
+    }
 }
