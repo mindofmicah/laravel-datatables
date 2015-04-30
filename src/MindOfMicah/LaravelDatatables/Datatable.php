@@ -9,7 +9,7 @@ class Datatable
     protected $columns;
 
 	public function __construct($a) {
-		$this->a = $a;
+        $this->a = $a;
 	}
 	
     public function asJsonResponse()
@@ -21,9 +21,13 @@ class Datatable
             if ($this->columns) {
 
             }
-            $models = $model_name::select($this->columns?:'*')->get();
+            $sql = $model_name::query()->select($this->columns ?: '*');
+
+            $total = ($sql->count());
+            $models = $sql->take($this->a->input('length'))->get();
             $data = $models->toArray();
-            $total = count($models);
+            
+            $total = $total;
             $amount_displayed = count($models);
         }
 
