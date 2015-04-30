@@ -71,4 +71,17 @@ class ExampleTest extends TestCase
         $this->visitDatatable('columns')->seeJSONContains($a);
     }
 
+    public function testDatatableRespectsASetLimit()
+    {
+        $expected = [TestDummy::create('Model')->toArray()];
+        TestDummy::times(50)->create('Model');
+        $a = [
+            'aaData'=> $expected,
+            'iTotalRecords'=>51,
+            'iTotalDisplayRecords'=>1
+        ];
+        $dt = new Datatable;
+        $dt->limitedTo(1);
+        $this->visitDatatable('limit', $dt)->seeJSONContains($a);
+    }
 }
