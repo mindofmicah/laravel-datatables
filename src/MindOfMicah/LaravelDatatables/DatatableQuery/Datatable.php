@@ -8,6 +8,7 @@ class Datatable
 
     public $limit = 10;
     public $start = 0;
+    public $search_term;
 
     public function addDummyColumns($how_many)
     {
@@ -40,7 +41,7 @@ class Datatable
     public function formatSearch()
     {
         return array (
-            'value' => '',
+            'value' => $this->search_term,
             'regex' => 'false',
         );
     }
@@ -81,6 +82,13 @@ array (
     public function startingFrom($argument1)
     {
         $this->start = $argument1;
+        return $this;
+        // TODO: write logic here
+    }
+
+    public function searchFor($search_term)
+    {
+        $this->search_term = $search_term;
         return $this;
         // TODO: write logic here
     }

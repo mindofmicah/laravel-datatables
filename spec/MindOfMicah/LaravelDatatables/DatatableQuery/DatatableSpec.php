@@ -35,4 +35,9 @@ class DatatableSpec extends ObjectBehavior
     {
         $this->startingFrom(50)->shouldBe($this);
     }
+
+    public function it_lets_you_append_a_search_term()
+    {
+        $this->searchFor('string')->shouldBe($this);
+    }
 }
