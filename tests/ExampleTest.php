@@ -19,8 +19,9 @@ class ExampleTest extends TestCase
 	public function testBasicExample()
 	{
         $a = [
-            'aaData'=>[
+            'aaData' =>[
             ],
+
             'iTotalRecords'=>0,
             'iTotalDisplayRecords'=>0
         ];
@@ -82,6 +83,20 @@ class ExampleTest extends TestCase
         ];
         $dt = new Datatable;
         $dt->limitedTo(1);
+        $this->visitDatatable('limit', $dt)->seeJSONContains($a);
+    }
+    public function testDatatableLetsYouPaginate()
+    {
+        TestDummy::times(50)->create('Model');
+        $expected = [TestDummy::create('Model')->toArray()];
+        $a = [
+            'aaData'=> $expected,
+            'iTotalRecords'=>51,
+            'iTotalDisplayRecords'=>1
+        ];
+        $dt = new Datatable;
+        $dt->limitedTo(1);
+        $dt->startingFrom(50);
         $this->visitDatatable('limit', $dt)->seeJSONContains($a);
     }
 }
