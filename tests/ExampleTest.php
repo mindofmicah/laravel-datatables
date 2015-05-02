@@ -98,5 +98,27 @@ class ExampleTest extends TestCase
         $dt->limitedTo(1);
         $dt->startingFrom(50);
         $this->visitDatatable('limit', $dt)->seeJSONContains($a);
+
+    }
+
+    public function testWeCanSearchByAColumn()
+    {
+        TestDummy::create('Model',['hi'=>'micah smith']);//->toArray(),
+        TestDummy::create('Model',['hi'=>'micah escobar']);
+        $expected = [
+            ['hi'=>'micah smith'],
+            ['hi'=>'micah escobar']
+        ];
+        TestDummy::create('Model');
+        $a = [
+            'aaData'=> $expected,
+            'iTotalRecords'=>2,
+            'iTotalDisplayRecords'=>2
+        ];
+        $dt = new Datatable;
+        $dt->searchFor('micah');
+        $dt->addNamedColumns('hi');
+        $this->visitDatatable('search', $dt)->seeJSONContains($a);
+
     }
 }
