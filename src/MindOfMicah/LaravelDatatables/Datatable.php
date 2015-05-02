@@ -24,6 +24,7 @@ class Datatable
             $sql = $model_name::query()->select($this->columns ?: '*');
 
             $total = ($sql->count());
+            $sql->skip($this->a->input('start'));
             $models = $sql->take($this->a->input('length'))->get();
             $data = $models->toArray();
             
