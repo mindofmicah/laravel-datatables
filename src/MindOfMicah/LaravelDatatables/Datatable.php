@@ -23,6 +23,12 @@ class Datatable
             }
             $sql = $model_name::query()->select($this->columns ?: '*');
 
+            $search_info = $this->a->input('search');//var_dump($this->a->all());
+            if (!empty($search_info['value'])) {
+                foreach ($this->a->input('columns') as $column) {
+                    $sql->where($column['name'], 'LIKE', '%' . $search_info['value'] . '%');
+                }
+            }
             $total = ($sql->count());
             $sql->skip($this->a->input('start'));
             $models = $sql->take($this->a->input('length'))->get();
