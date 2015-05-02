@@ -7,6 +7,8 @@ class Datatable
     public $columns = [];
 
     public $limit = 10;
+    public $start = 0;
+
     public function addDummyColumns($how_many)
     {
         foreach(range(1, intval($how_many)) as $index) {
@@ -60,7 +62,7 @@ array (
   'draw' => '1',
   'columns' => $this->formatColumns(), 
   'order' => $this->formatSorting(), 
-  'start' => '0',
+  'start' => $this->start,
   'length' => $this->limit,
   'search' =>$this->formatSearch(), 
   '_' => '1430226949951',
@@ -74,5 +76,12 @@ array (
     {
         $this->limit = $argument1;
         return $this;
+    }
+
+    public function startingFrom($argument1)
+    {
+        $this->start = $argument1;
+        return $this;
+        // TODO: write logic here
     }
 }

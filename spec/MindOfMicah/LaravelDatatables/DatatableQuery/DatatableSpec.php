@@ -31,4 +31,8 @@ class DatatableSpec extends ObjectBehavior
         $this->limitedTo(5)->shouldBe($this);
     }
 
+    public function it_lets_you_set_a_starting_point()
+    {
+        $this->startingFrom(50)->shouldBe($this);
+    }
 }
