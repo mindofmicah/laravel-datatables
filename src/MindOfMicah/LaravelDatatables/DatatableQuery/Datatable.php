@@ -90,6 +90,5 @@ array (
     {
         $this->search_term = $search_term;
         return $this;
-        // TODO: write logic here
     }
 }
