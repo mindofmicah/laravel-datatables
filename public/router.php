@@ -2,6 +2,12 @@
 require __DIR__ . '/../vendor/autoload.php';
 use MindOfMicah\LaravelDatatables\Datatable;
 
+register_shutdown_function(function (){
+    if ($error = error_get_last()) {
+        echo '<pre>' . var_dump($error);
+    }
+});
+
 buildCapsuleFromConfigFile(__DIR__ . '/../integrated.json');
 $request = buildRequestObject();
 
