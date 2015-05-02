@@ -83,7 +83,6 @@ array (
     {
         $this->start = $argument1;
         return $this;
-        // TODO: write logic here
     }
 
     public function searchFor($search_term)
