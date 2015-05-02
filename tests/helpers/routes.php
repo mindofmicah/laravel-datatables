@@ -9,6 +9,9 @@ return [
     },
     'limit'=> function (&$datatable) {
         $datatable->forEloquentModel('\\Model');
+    },
+    'search'=> function (&$datatable) {
+        $datatable->forEloquentModel('\\Model')->pluckColumns('hi');
     }
 
 ];
