@@ -10,7 +10,7 @@ class ExampleTest extends TestCase
     use EloquentFunctionalityTrait;
     use ApiRequests;
 
-    protected $tables_used = ['m'];
+    protected $tables_used = ['m', 'people'];
 	/**
 	 * A basic functional test example.
 	 *
@@ -56,15 +56,14 @@ class ExampleTest extends TestCase
     public function testSelectAllForWithPluckedColumns()
     {
         $data = [
-            TestDummy::create('Model', ['hi'=>'micah'])->toArray(), 
-            TestDummy::create('Model', ['hi'=>'sam'])->toArray()
+            TestDummy::create('Person', ['first'=>'micah','last'=>'escobar'])->toArray(), 
+            TestDummy::create('Person', ['first'=>'sam', 'last'=>'bell'])->toArray()
         ];        
 
-        $this->visitDatatable('one');
         $a = [
             'aaData'=> [
-                ['hi'=>'micah'],
-                ['hi'=>'sam'],
+                ['first'=>'micah', 'last'=>'escobar'],
+                ['first'=>'sam', 'last'=>'bell']
             ],
             'iTotalRecords'=>2,
             'iTotalDisplayRecords'=>2
@@ -98,6 +97,28 @@ class ExampleTest extends TestCase
         $dt->limitedTo(1);
         $dt->startingFrom(50);
         $this->visitDatatable('limit', $dt)->seeJSONContains($a);
+
+    }
+
+    public function testWeCanSearchByMultipleColumn()
+    {
+        TestDummy::create('Person',['first'=>'smithers', 'last'=>'wilson']);//->toArray(),
+        TestDummy::create('Person',['first'=>'will', 'last'=>'smith']);//->toArray(),
+        TestDummy::create('Person');
+        $expected = [
+            ['first'=>'smithers', 'last'=>'wilson'],
+            ['first'=>'will', 'last'=>'smith'],
+        ];
+        $a = [
+            'aaData'=> $expected,
+            'iTotalRecords'=>2,
+            'iTotalDisplayRecords'=>2
+        ];
+        $dt = new Datatable;
+        $dt->searchFor('smith');
+        $dt->addNamedColumns('first');
+        $dt->addNamedColumns('last');
+        $this->visitDatatable('search-many', $dt)->seeJSONContains($a);
 
     }
 
