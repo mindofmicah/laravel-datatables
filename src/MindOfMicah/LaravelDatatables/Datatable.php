@@ -6,7 +6,7 @@ use Illuminate\Http\JsonResponse;
 class Datatable
 {
     protected $model;
-    protected $columns;
+    protected $columns=[];
 
 	public function __construct($a) {
         $this->a = $a;
@@ -25,15 +25,21 @@ class Datatable
 
             $search_info = $this->a->input('search');
             if (!empty($search_info['value'])) {
-                foreach ($this->a->input('columns') as $column) {
-                    $sql->where($column['name'], 'LIKE', '%' . $search_info['value'] . '%');
+                foreach ($this->a->input('columns') as $index => $column) {
+                    if ($index) {
+                        $sql->orWhere($column['name'], 'LIKE', '%' . $search_info['value'] . '%');
+                    } else {
+                        $sql->where($column['name'], 'LIKE', '%' . $search_info['value'] . '%');
+                    }
                 }
             }
+
+            \Illuminate\Database\Capsule\Manager::enableQueryLog();
             $total = ($sql->count());
             $sql->skip($this->a->input('start'));
             $models = $sql->take($this->a->input('length'))->get();
             $data = $models->toArray();
-            
+
             $total = $total;
             $amount_displayed = count($models);
         }
@@ -54,7 +60,7 @@ class Datatable
 
     public function pluckColumns($argument1)
     {
-        $this->columns[] = $argument1;
+        $this->columns = array_merge($this->columns, func_get_args());
         return $this;
     }
 }
