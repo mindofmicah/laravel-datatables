@@ -58,7 +58,7 @@ class Datatable
         return $this;
     }
 
-    public function pluckColumns($argument1)
+    public function pluckColumns()
     {
         $this->columns = array_merge($this->columns, func_get_args());
         return $this;
