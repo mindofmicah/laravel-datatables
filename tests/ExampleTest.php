@@ -140,6 +140,29 @@ class ExampleTest extends TestCase
         $dt->searchFor('micah');
         $dt->addNamedColumns('hi');
         $this->visitDatatable('search', $dt)->seeJSONContains($a);
+    }
 
+    public function testWeCanSortByAColumn()
+    {
+        $a = TestDummy::create('Model',['hi'=>'zmicah'])->toArray();
+        $b = TestDummy::create('Model',['hi'=>'xmicah'])->toArray();
+        $c = TestDummy::create('Model',['hi'=>'ymicah'])->toArray();
+
+        $expected = [
+            $b, 
+            $c,
+            $a
+        ];
+
+        $e = [
+            'aaData'=> $expected,
+            'iTotalRecords'=>3,
+            'iTotalDisplayRecords'=>3
+        ];
+
+        $dt = new Datatable;
+        $dt->addNamedColumns('id','hi','created_at','updated_at');
+        $dt->addSorter(1, 'ASC');
+        $this->visitDatatable('all', $dt)->seeJSONEquals($e);
     }
 }
