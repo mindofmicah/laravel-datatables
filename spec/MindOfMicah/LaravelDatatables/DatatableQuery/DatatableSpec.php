@@ -40,4 +40,9 @@ class DatatableSpec extends ObjectBehavior
     {
         $this->searchFor('string')->shouldBe($this);
     }
+
+    public function it_lets_you_append_a_sorting_entry()
+    {
+        $this->addSorter(0, 'asc')->shouldBe($this);
+    }
 }
