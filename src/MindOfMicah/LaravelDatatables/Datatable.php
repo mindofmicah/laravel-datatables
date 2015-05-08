@@ -34,6 +34,10 @@ class Datatable
                 }
             }
 
+            
+            foreach ($this->a->input('order', []) as $order) {
+                $sql->orderBy($this->a->input('columns')[$order['col']]['name'], $order['dir']);
+            }
             \Illuminate\Database\Capsule\Manager::enableQueryLog();
             $total = ($sql->count());
             $sql->skip($this->a->input('start'));
