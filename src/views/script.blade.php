@@ -8,8 +8,12 @@
             info_empty: $.fn.DataTable.defaults.oLanguage.sInfoEmpty
         };
 
+        var options = $.extend(
+            {{json_encode($datatable->data())}},
+            window.dt_options || {}
+        );
         var datatable = $('#{{$datatable->selector()}}').dataTable(
-            {{json_encode($datatable->data())}}
+            options
         ).api();
 
         $.get('{{$datatable->route()}}', function (result) {
@@ -19,5 +23,6 @@
             datatable.rows.add(result.data);
             datatable.draw();
         }, 'json');
+        window.dt_options = null;
     }());
 </script>
