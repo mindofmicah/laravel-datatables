@@ -23,9 +23,9 @@ class Datatable
 
     ];
 
-    public function __construct($a)
+    public function __construct()
     {
-        $this->a = $a;
+        $this->a = null;
         $this->selector = $this->generateSelector();
     }
 
