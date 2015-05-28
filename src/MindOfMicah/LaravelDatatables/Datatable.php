@@ -32,8 +32,6 @@ class Datatable
     public function __toString()
     {
         return (string)(\View::make('datatables::script', ['datatable' => $this]));
-        die();
-        dd('asdf', $d);
     }
 
     public function magic()
