@@ -10,7 +10,7 @@ class ExampleTest extends TestCase
     use EloquentFunctionalityTrait;
     use ApiRequests;
 
-    protected $tables_used = ['m'];
+    protected $tables_used = ['m', 'people'];
 	/**
 	 * A basic functional test example.
 	 *
@@ -56,15 +56,14 @@ class ExampleTest extends TestCase
     public function testSelectAllForWithPluckedColumns()
     {
         $data = [
-            TestDummy::create('Model', ['hi'=>'micah'])->toArray(), 
-            TestDummy::create('Model', ['hi'=>'sam'])->toArray()
+            TestDummy::create('Person', ['first'=>'micah','last'=>'escobar'])->toArray(), 
+            TestDummy::create('Person', ['first'=>'sam', 'last'=>'bell'])->toArray()
         ];        
 
-        $this->visitDatatable('one');
         $a = [
             'aaData'=> [
-                ['hi'=>'micah'],
-                ['hi'=>'sam'],
+                ['first'=>'micah', 'last'=>'escobar'],
+                ['first'=>'sam', 'last'=>'bell']
             ],
             'iTotalRecords'=>2,
             'iTotalDisplayRecords'=>2
@@ -101,6 +100,28 @@ class ExampleTest extends TestCase
 
     }
 
+    public function testWeCanSearchByMultipleColumn()
+    {
+        TestDummy::create('Person',['first'=>'smithers', 'last'=>'wilson']);//->toArray(),
+        TestDummy::create('Person',['first'=>'will', 'last'=>'smith']);//->toArray(),
+        TestDummy::create('Person');
+        $expected = [
+            ['first'=>'smithers', 'last'=>'wilson'],
+            ['first'=>'will', 'last'=>'smith'],
+        ];
+        $a = [
+            'aaData'=> $expected,
+            'iTotalRecords'=>2,
+            'iTotalDisplayRecords'=>2
+        ];
+        $dt = new Datatable;
+        $dt->searchFor('smith');
+        $dt->addNamedColumns('first');
+        $dt->addNamedColumns('last');
+        $this->visitDatatable('search-many', $dt)->seeJSONContains($a);
+
+    }
+
     public function testWeCanSearchByAColumn()
     {
         TestDummy::create('Model',['hi'=>'micah smith']);//->toArray(),
@@ -119,6 +140,29 @@ class ExampleTest extends TestCase
         $dt->searchFor('micah');
         $dt->addNamedColumns('hi');
         $this->visitDatatable('search', $dt)->seeJSONContains($a);
+    }
 
+    public function testWeCanSortByAColumn()
+    {
+        $a = TestDummy::create('Model',['hi'=>'zmicah'])->toArray();
+        $b = TestDummy::create('Model',['hi'=>'xmicah'])->toArray();
+        $c = TestDummy::create('Model',['hi'=>'ymicah'])->toArray();
+
+        $expected = [
+            $b, 
+            $c,
+            $a
+        ];
+
+        $e = [
+            'aaData'=> $expected,
+            'iTotalRecords'=>3,
+            'iTotalDisplayRecords'=>3
+        ];
+
+        $dt = new Datatable;
+        $dt->addNamedColumns('id','hi','created_at','updated_at');
+        $dt->addSorter(1, 'ASC');
+        $this->visitDatatable('all', $dt)->seeJSONEquals($e);
     }
 }

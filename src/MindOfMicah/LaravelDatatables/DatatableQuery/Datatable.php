@@ -6,6 +6,7 @@ class Datatable
 {
     public $columns = [];
 
+    public $sorting = [];
     public $limit = 10;
     public $start = 0;
     public $search_term;
@@ -47,15 +48,11 @@ class Datatable
     }
     private function formatSorting()
     {
-return  array (
-    0 => 
-    array (
-      'column' => '0',
-      'dir' => 'asc',
-    ),
-  );
-
+        return array_map(function (Sorter $s) {
+            return $s->toArray();
+        }, $this->sorting);
     }
+
     public function __toString()
     {
 $data = 
@@ -88,6 +85,12 @@ array (
     public function searchFor($search_term)
     {
         $this->search_term = $search_term;
+        return $this;
+    }
+
+    public function addSorter($argument1, $argument2)
+    {
+        $this->sorting[] = new Sorter($argument1, $argument2);
         return $this;
     }
 }

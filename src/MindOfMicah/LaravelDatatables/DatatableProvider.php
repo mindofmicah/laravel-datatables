@@ -2,10 +2,16 @@
 namespace MindOfMicah\LaravelDatatables;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Foundation\Application;
 
 class DatatableProvider extends ServiceProvider
 {
+    public function boot()
+    {
+//        $this->package('mindofmicah/laravel-datatables');
+        $this->package('mindofmicah/laravel-datatables', 'datatables');
+//        \View::addNamespace('datatables', __DIR__. '/../../views');
+    }
 	public function register()
 	{
 		\App::bind('MindOfMicah\LaravelDatatables\Datatable', function (Application $a) {
