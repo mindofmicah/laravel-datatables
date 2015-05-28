@@ -7,9 +7,9 @@ use MyProject\Proxies\__CG__\stdClass;
 class Datatable
 {
     protected $model;
-    protected $columns = [];
     private $route;
     protected $selector;
+    protected $columns=[];
 
     private $data = [
         'data' => null,
@@ -77,7 +77,6 @@ class Datatable
                     }
                 }
             }
-
 
             foreach ($this->a->input('order', []) as $order) {
                 $sql->orderBy($this->a->input('columns')[$order['col']]['name'], $order['dir']);
